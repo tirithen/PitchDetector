@@ -1,7 +1,7 @@
 {
-  "name": "PitchDetect",
+  "name": "PitchDetector",
   "version": "0.0.1",
-  "homepage": "https://github.com/tirithen/PitchDetect",
+  "homepage": "https://github.com/tirithen/PitchDetector",
   "authors": [
     "Fredrik Söderström <tirithen@gmail.com>"
   ],
