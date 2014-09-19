@@ -195,7 +195,7 @@ PitchDetector.prototype.autoCorrelate = function (buffer, sampleRate) {
 };
 
 PitchDetector.prototype.noteFromPitch = function (frequency) {
-	var noteNum = 12 * (Math.log( frequency / 440 ) / Math.log(2));
+	var noteNum = 12 * (Math.log(frequency / 440) / Math.log(2));
 	return Math.round(noteNum) + 69;
 };
 
