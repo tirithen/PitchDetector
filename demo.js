@@ -12,7 +12,7 @@ window.document.body.appendChild(toneElement);
 window.document.body.appendChild(statusElement);
 
 pitchDetector.on('pitchData', function (event) {
- // console.log(event.detail.pitch, event.detail.note, event.detail.detune);
+  console.log(event.detail.pitch, event.detail.note, event.detail.detune);
   toneElement.innerHTML =
     'Current note: <strong>' + (event.detail.note ? event.detail.note : 'N/A') + '</strong> ' +
     'Cents off: <strong>' + (event.detail.detune ? event.detail.detune : 'N/A') + '</strong>';
