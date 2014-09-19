@@ -92,12 +92,12 @@ PitchDetector.prototype.getUserMedia = function (dictionary, callback) {
 
 PitchDetector.prototype.gotStream = function (stream) {
   // Create an AudioNode from the stream.
-  var mediaStreamSource = this.audioContext.createMediaStreamSource(stream);
+  this.mediaStreamSource = this.audioContext.createMediaStreamSource(stream);
 
   // Connect it to the destination.
   this.analyser = this.audioContext.createAnalyser();
   this.analyser.fftSize = this.bufferLength;
-  mediaStreamSource.connect(this.analyser);
+  this.mediaStreamSource.connect(this.analyser);
   this.updatePitch();
 };
 
@@ -211,9 +211,8 @@ PitchDetector.prototype.stopListening = function () {
   if (!window.cancelAnimationFrame) {
     window.cancelAnimationFrame = window.webkitCancelAnimationFrame;
   }
-
   window.cancelAnimationFrame(this.pitchUpdaterId);
-
+  delete this.mediaStreamSource;
   this.trigger('stopListening');
 };
 
