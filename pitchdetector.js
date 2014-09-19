@@ -24,8 +24,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// TODO: fix bug that somehow closes the mic connection after some seconds:
-
 function PitchDetector() {
 	if (!window.requestAnimationFrame) {
 		window.requestAnimationFrame = window.webkitRequestAnimationFrame;
